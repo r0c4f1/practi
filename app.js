@@ -150,7 +150,10 @@ let dataRick = [
 ];
 
 serve.get("/usuarios", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:1234");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://practi-dev-qkkq.4.us-1.fl0.io/"
+  );
   res.status(200).send(dataRick);
 });
 
