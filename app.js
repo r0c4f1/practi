@@ -18,21 +18,21 @@ const zodScheme = z.object({
 
 // Database connection
 
-let connection = createConnection({
-  host: "localhost",
-  user: "root",
-  password: "29760953",
-  database: "prueba",
-});
+// let connection = createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "29760953",
+//   database: "prueba",
+// });
 
-connection.connect((err) => {
-  if (err) {
-    console.log(`Error ${err}`);
-    return;
-  }
+// connection.connect((err) => {
+//   if (err) {
+//     console.log(`Error ${err}`);
+//     return;
+//   }
 
-  console.log("connected as id " + connection.threadId);
-});
+//   console.log("connected as id " + connection.threadId);
+// });
 
 // code
 
@@ -51,17 +51,107 @@ const port = process.env.PORT ?? 1234;
 //   next();
 // });
 
+let dataRick = [
+  {
+    name: "Rick Sanchez",
+    planeta: "Tierra",
+    age: "70",
+  },
+  {
+    name: "Morty Smith",
+    planeta: "Tierra",
+    age: "14",
+  },
+  {
+    name: "Summer Smith",
+    planeta: "Tierra",
+    age: "17",
+  },
+  {
+    name: "Beth Smith",
+    planeta: "Tierra",
+    age: "34",
+  },
+  {
+    name: "Jerry Smith",
+    planeta: "Tierra",
+    age: "34",
+  },
+  {
+    name: "Abadango Cluster Princess",
+    planeta: "Abadango",
+    age: "300",
+  },
+  {
+    name: "Abradolf Lincler",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Adjudicator Rick",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Agency Director",
+    planeta: "Tierra",
+    age: "Unknown",
+  },
+  {
+    name: "Alan Rails",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Albert Einstein",
+    planeta: "Tierra",
+    age: "76",
+  },
+  {
+    name: "Alexander",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Alien Googah",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Alien Morty",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Alien Rick",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Amish Cyborg",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Annie",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Antenna Morty",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+  {
+    name: "Antenna Rick",
+    planeta: "N/A",
+    age: "Unknown",
+  },
+];
+
 serve.get("/usuarios", (req, res) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:1234");
-  connection.query("SELECT * FROM prueba", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send(err);
-      return;
-    }
-
-    res.status(200).send(data);
-  });
+  res.status(200).send(dataRick);
 });
 
 serve.get("/usuario/:id", (req, res) => {
