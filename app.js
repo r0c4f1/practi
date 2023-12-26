@@ -18,21 +18,21 @@ const zodScheme = z.object({
 
 // Database connection
 
-let connection = createConnection({
-  host: "localhost",
-  user: "root",
-  password: "29760953",
-  database: "prueba",
-});
+// let connection = createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "29760953",
+//   database: "prueba",
+// });
 
-connection.connect((err) => {
-  if (err) {
-    console.log(`Error ${err}`);
-    return;
-  }
+// connection.connect((err) => {
+//   if (err) {
+//     console.log(`Error ${err}`);
+//     return;
+//   }
 
-  console.log("connected as id " + connection.threadId);
-});
+//   console.log("connected as id " + connection.threadId);
+// });
 
 // code
 
